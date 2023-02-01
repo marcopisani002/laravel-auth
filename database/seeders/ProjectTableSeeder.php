@@ -15,23 +15,30 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        $dati = ["Laravel", "PHP", "vue+vite", "Bootstrap "];
 
-       
-        foreach ($dati as $cat) {
-            
-            project::create([
-                "name" => $cat
-            ]);
-        }
-        $descrizione = ["progetto con validation", "ciclo foreach", "implementazione API", "d-flex "];
 
-       
-        foreach ($descrizione as $desc) {
-            
-            project::create([
-                "description" => $desc
-            ]);
+
+
+        $dati = [
+            [
+                "name" => "Laravel",
+                "description" => "progetto con validation"
+            ],
+            [
+                "name" => "PHP",
+                "description" => "ciclo foreach"
+            ],
+            [
+                "name" => "vue+vite",
+                "description" => "implementazione API"
+            ]
+        ];
+
+        foreach ($dati as $dato) {
+            $myCat = new project();
+            $myCat->name = $dato["name"];
+            $myCat->description = $dato["description"];
+            $myCat->save();
         }
     }
 }
