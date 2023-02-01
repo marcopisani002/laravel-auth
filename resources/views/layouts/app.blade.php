@@ -19,32 +19,36 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-dark">
     <div id="app">
 
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
-                            <g clip-path="url(#clip0)" fill="#EF3B2D">
-                                <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z" />
-                            </g>
-                        </svg>
+
+                    <div class="logo_laravel ">
+                        <img src="data:image/png;base64,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"
+                            class="my-with">
                     </div>
+
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                        <li class="nav-item px-3 ">
+                            <a class="nav-link text-black" href="{{ url('/') }}">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('create') }}</a>
                         </li>
                     </ul>
 
@@ -52,39 +56,41 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
     </div>
