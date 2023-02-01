@@ -1,32 +1,37 @@
 @extends('layouts.app')
 
 @php
-  $title = 'Post #' . $post->id;
+    $title = 'Post #' . $post->id;
 @endphp
 
 @section('title', $title)
 
 @section('content')
-  <h1>{{ $title }}</h1>
+    <h1>{{ $title }}</h1>
 
-  @if (session('status') === 'success')
-    <div class="alert alert-success">
-      {{ session('message') }}
-    </div>
-  @endif
-
-  <div class="card">
-    {{-- Se cover_img esiste, mostra un tag img, altrimenti nulla --}}
-    @if ($post->cover_img)
-      <img src="{{ $post->cover_img }}" alt="" class="card-img-top">
+    @if (session('status') === 'success')
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
     @endif
 
-    <div class="card-body">
-      <div class="card-title">{{ $post->title }}</div>
-      <p class="card-text">{{ $post->content }}</p>
-      <div><strong>Publico:</strong> {{ $post->public ? 'Si' : 'No' }} </div>
-      <div><strong>Stato:</strong> {{ $post->status }} </div>
-    </div>
-  </div>
 
+
+    <div class="d-flex justify-content-center">
+
+
+        <div class="card bg-success text-white " style="width: 18rem;">
+            {{-- Se cover_img esiste, mostra un tag img, altrimenti nulla --}}
+            @if ($post->cover_img)
+                <img src="{{ $post->cover_img }}" alt="" class="card-img-top w-100">
+            @endif
+
+            <div class="card-body text-white">
+                <div class="card-title"><strong class="px-3 text-warning">Nome:</strong>{{ $post->name }}</div>
+                <p class="card-text"><strong class="px-3 text-warning">Descrizione:</strong>{{ $post->description }}</p>
+                
+                <div><strong class="px-3 text-warning">ID:</strong > {{ $post->id }} </div>
+            </div>
+        </div>
+    </div>s
 @endsection

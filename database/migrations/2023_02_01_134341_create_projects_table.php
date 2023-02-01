@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->longText("description");
-            $table->string("cover_img")->nullable();
+            $table->string("cover_img")->default();
             $table->string("git_link")->nullable();
             $table->timestamps();
         });

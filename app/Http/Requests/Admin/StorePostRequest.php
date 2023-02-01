@@ -14,9 +14,7 @@ class StorePostRequest extends FormRequest {
     public function authorize() {
         // Controllo se l'utente è admin.
         // se no blocco.
-        if (Auth::user()->role !== "admin") {
-            return false; // blocca l'azione e da un errore di autorizzazione
-        }
+       
 
         return true; // Consente l'azione
     }

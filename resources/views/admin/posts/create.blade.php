@@ -1,19 +1,15 @@
 @extends('layouts.app')
 
-@php
-  $title = 'Nuovo post';
-@endphp
 
-@section('title', $title)
 
 @section('content')
-  <h1>{{ $title }}</h1>
+  <h1>NUOVO POST</h1>
 
   {{-- Se abbiamo degli errori di validazione, mostriamo un alert con questi errori
     $errors->any() - Ritorna un booleano
     $errors->all() - Ritorna un array numerico di strighe, dove ogni stringa è un errore
     --}}
-  @if ($errors->any())
+  {{-- @if ($errors->any())
     <div class="alert alert-danger">
       I dati inseriti non sono validi:
 
@@ -23,36 +19,30 @@
         @endforeach
       </ul>
     </div>
-  @endif
+  @endif --}}
 
-  {{-- Form per la creazione --}}
-  <form action="{{ route('admin.posts.store') }}" method="POST">
+
+  <form action="{{ route('admin.posts.store') }}" method="POST" class="text-white">
     @csrf()
 
     <div class="mb-3">
       <label class="form-label">Titolo</label>
       <input type="text"
-        class="form-control @error('title') is-invalid @elseif(old('title')) is-valid @enderror"
-        name="title" value="{{ $errors->has('title') ? '' : old('title') }}">
+        class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror"
+        name="name" >
 
-      {{-- Se tra gli errori c'è ne uno per il title, mostra il div invalid-feedback --}}
-      @error('title')
+      
+      @error('name')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
-      @elseif(old('title'))
-        {{-- altrimenti se c'è un valore old per title, mostra un valid-feedback --}}
+      @elseif(old('name'))
         <div class="valid-feedback">
           Ottimo lavoro!
         </div>
       @enderror
 
-      {{--
-        Questo è quello che fa la direttiva @error()
-        @if ($errors->has('title'))
-
-        @endif
-      --}}
+   
     </div>
 
     <div class="mb-3">
@@ -75,11 +65,7 @@
       @enderror
     </div>
 
-    <div class="mb-3 form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="switch_public" name="public"
-        {{ old('public', 1) ? 'checked' : '' }} value="1">
-      <label class="form-check-label" for="switch_public">Post publico</label>
-    </div>
+ 
 
     <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Annulla</a>
     <button class="btn btn-primary">Salva</button>
