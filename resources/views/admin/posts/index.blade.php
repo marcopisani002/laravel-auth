@@ -6,7 +6,7 @@
 <div class="d-flex justify-content-between mb-5 mt-5 me-3 px-3">
 
   <h2 class="text-white fw-bold ">Lista post</h2>
-  <button  href="{{ route('admin.posts.create') }}" class="btn btn-success ">   Create</button>
+  <a  href="{{ route('admin.posts.create') }}" class="btn btn-success ">  + Create</a>
   
 
 </div>
