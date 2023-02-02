@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StorePostRequest;
 use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project as XmlProject;
 use SebastianBergmann\CodeCoverage\Report\Xml\Projects;
 
 class PostController extends Controller {
@@ -38,14 +39,10 @@ class PostController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request) {
-        $data = $request->validated();
+    public function store(Request $request) {
+        $data = $request->all();
 
-        $post = project::create([
-            ...$data,
-           
-            "user_id" => Auth::id()
-        ]);
+        $post = Project::create($data);
 
         return redirect()->route("admin.posts.show", $post->id);
     }
@@ -67,8 +64,11 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        //
+        $post = Project::findOrFail($id);
+
+        return view("admin.posts.edit", compact("post"));
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -78,6 +78,10 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        $post = Project::findOrFail($id);
+        $data = $request->all();
+
+        $post->update($data);
         return redirect()->route("admin.posts.show", $id);
     }
 

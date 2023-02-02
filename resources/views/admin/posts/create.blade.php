@@ -29,8 +29,8 @@
 
         <div class="mb-3">
             <label class="form-label">Contenuto</label>
-            <textarea name="content" cols="30" rows="5" class="form-control @error('content') is-invalid @enderror">{{ old('content') }}</textarea>
-            @error('content')
+            <textarea name="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+            @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -38,8 +38,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="formFile" class="form-label">Immagine di copertina</label>
-            <input type="file" class="form-control  @error('cover_img') is-invalid @enderror" name="cover_img"  id="formFile"
+            <label  class="form-label">Immagine di copertina</label>
+            <input type="text" class="form-control  @error('cover_img') is-invalid @enderror" name="cover_img"  
                 value="{{ old('cover_img') }}">
             @error('cover_img')
                 <div class="invalid-feedback">

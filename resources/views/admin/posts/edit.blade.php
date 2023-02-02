@@ -1,13 +1,9 @@
 @extends('layouts.app')
 
-@php
-  $title = 'Modifica post #' . $post->id;
-@endphp
 
-@section('title', $title)
 
 @section('content')
-  <h1>{{ $title }}</h1>
+  <h1>{{'Modifica post #' . $post->id}}</h1>
 
   {{-- Form per la creazione --}}
   <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
@@ -46,7 +42,7 @@
 
     
 
-    <a href="{{ route('posts.index') }}" class="btn btn-secondary">Annulla</a>
+    <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Annulla</a>
     <button class="btn btn-primary">Salva</button>
   </form>
 
