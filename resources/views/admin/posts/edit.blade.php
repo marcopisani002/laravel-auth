@@ -10,14 +10,14 @@
   <h1>{{ $title }}</h1>
 
   {{-- Form per la creazione --}}
-  <form action="{{ route('posts.update', $post->id) }}" method="POST">
+  <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
     @csrf()
     @method('PUT')
 
     <div class="mb-3">
       <label class="form-label">Titolo</label>
-      <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $post->title) }}">
-      @error('title')
+      <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $post->name) }}">
+      @error('name')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
@@ -26,8 +26,8 @@
 
     <div class="mb-3">
       <label class="form-label">Contenuto</label>
-      <textarea name="content" cols="30" rows="5" class="form-control @error('content') is-invalid @enderror">{{ old('content', $post->content) }}</textarea>
-      @error('content')
+      <textarea name="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror">{{ old('description', $post->description) }}</textarea>
+      @error('description')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
@@ -44,11 +44,7 @@
       @enderror
     </div>
 
-    <div class="mb-3 form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="switch_public" name="public"
-        {{ old('public', $post->public) ? 'checked' : '' }}>
-      <label class="form-check-label" for="switch_public">Post publico</label>
-    </div>
+    
 
     <a href="{{ route('posts.index') }}" class="btn btn-secondary">Annulla</a>
     <button class="btn btn-primary">Salva</button>

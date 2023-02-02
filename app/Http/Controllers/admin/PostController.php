@@ -43,8 +43,8 @@ class PostController extends Controller {
 
         $post = project::create([
             ...$data,
-            // "user_id" => Auth::user()->id // recuperiamo prima l'utente loggato, poi il suo id
-            "user_id" => Auth::id() // recuperiamo direttamente l'id dell'utente loggato
+           
+            "user_id" => Auth::id()
         ]);
 
         return redirect()->route("admin.posts.show", $post->id);
@@ -78,7 +78,7 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        return redirect()->route("admin.posts.show", $id);
     }
 
     /**
