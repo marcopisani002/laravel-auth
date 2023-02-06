@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StorePostRequest;
+use App\Http\Requests\Admin\StoreprojectRequest;
 use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,7 @@ class PostController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(StorePostRequest $request) {
         $data = $request->all();
 
         $post = Project::create($data);
@@ -77,12 +78,12 @@ class PostController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(StorePostRequest $request, $id) {
         $post = Project::findOrFail($id);
         $data = $request->all();
 
         $post->update($data);
-        return redirect()->route("admin.posts.show", $id);
+        return redirect()->route("admin.posts.index");
     }
 
     /**

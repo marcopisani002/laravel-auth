@@ -15,9 +15,14 @@ class StorePostRequest extends FormRequest {
         // Controllo se l'utente è admin.
         // se no blocco.
        
-
-        return true; // Consente l'azione
+   
+        if (Auth::user()) {
+            return true; // blocca l'azione e da un errore di autorizzazione
+        }else{
+            return false;
+        }
     }
+    
 
     /**
      * Get the validation rules that apply to the request.
@@ -26,9 +31,9 @@ class StorePostRequest extends FormRequest {
      */
     public function rules() {
         return [
-            "title" => "required|min:10|max:255",
-            "content" => "required|string",
-            "public" => "boolean",
+            "name" => "required|min:10|max:255",
+            "description" => "required|string",
+            
             "cover_img" => "string|url"
         ];
     }

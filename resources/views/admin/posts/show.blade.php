@@ -7,7 +7,7 @@
 @section('title', $title)
 
 @section('content')
-    <h1>{{ $title }}</h1>
+    <h1 class="px-3 mt-5 mb-5 text-success fw-bold">{{ $title }}</h1>
 
     @if (session('status') === 'success')
         <div class="alert alert-success">

@@ -5,7 +5,7 @@
 @section('content')
   <h1>{{'Modifica post #' . $post->id}}</h1>
 
-  {{-- Form per la creazione --}}
+
   <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
     @csrf()
     @method('PUT')
@@ -45,5 +45,5 @@
     <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Annulla</a>
     <button class="btn btn-primary">Salva</button>
   </form>
-
+  @dd($errors)
 @endsection
